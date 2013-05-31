@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios
 
   s.source_files = 'library/FPPicker.framework/Versions/A/Headers/*.h'
-  s.preserve_paths = 'library/FPPicker.framework/*'
+  s.preserve_paths = 'library/FPPicker.framework'
   s.frameworks   = 'AssetsLibrary', 'QuartzCore', 'CoreGraphics', 'MobileCoreServices', 'Foundation', 'CoreFoundation', 'FPPicker'
-  s.xcconfig     = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/FPPicker"' }
+  s.xcconfig     = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/FilepickerSDK/library"' }
 
   s.requires_arc = true
 
