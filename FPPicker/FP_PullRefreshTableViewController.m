@@ -88,7 +88,7 @@
     refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, REFRESH_HEADER_HEIGHT)];
     refreshLabel.backgroundColor = [UIColor clearColor];
     refreshLabel.font = [UIFont boldSystemFontOfSize:12.0];
-    refreshLabel.textAlignment = UITextAlignmentCenter;
+    refreshLabel.textAlignment = NSTextAlignmentCenter;
 
     refreshArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"FPPicker.bundle/arrow.png"]];
     /*refreshArrow.frame = CGRectMake(floorf((REFRESH_HEADER_HEIGHT - 27) / 2),

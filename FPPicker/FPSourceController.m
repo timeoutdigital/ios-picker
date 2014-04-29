@@ -217,7 +217,7 @@ NSInteger ROW_HEIGHT = 44;
     
     
     cell.textLabel.text = @"Loading more";
-    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.userInteractionEnabled = NO;
     
     return cell;
