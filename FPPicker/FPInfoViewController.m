@@ -65,7 +65,7 @@
     [headingLabel setTextAlignment:NSTextAlignmentCenter];
     headingLabel.text = @"Filepicker.io is a trusted provider that helps\n applications connect with your content,\n no matter where you store it. \n\nYour information and files are secure and\n your username and password\n are never stored.\n\nMore information at https://www.filepicker.io";
     headingLabel.numberOfLines = 0;
-    headingLabel.lineBreakMode = UILineBreakModeWordWrap;
+    headingLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
     [self.view addSubview:headingLabel];
 
