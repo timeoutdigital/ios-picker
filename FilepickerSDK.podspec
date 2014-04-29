@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.frameworks   = 'AssetsLibrary', 'QuartzCore', 'CoreGraphics', 'MobileCoreServices', 'Foundation', 'CoreFoundation', 'FPPicker'
   #s.xcconfig     = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/FilepickerSDK/library"' }
 
-  s.requires_arc = false
+  s.requires_arc = true
   s.subspec 'arc' do |sp|
     sp.requires_arc = true
     sp.dependency 'AFNetworking', '~> 2.2.1'
