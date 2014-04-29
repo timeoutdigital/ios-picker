@@ -1,5 +1,10 @@
 .DS_Store
 
+*.bak
+*.orig
+*.swp
+
+
 # Xcode
 *.pbxuser
 *.mode1v3
