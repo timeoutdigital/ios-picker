@@ -36,7 +36,7 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 #endif
 
-static NSString * const kFPAFMultipartFormLineDelimiter = @"\r\n"; // CRLF
+//static NSString * const kFPAFMultipartFormLineDelimiter = @"\r\n"; // CRLF
 static NSString * const kFPAFMultipartFormBoundary = @"Boundary+0xAbCdEfGbOuNdArY";
 
 @interface FPAFMultipartFormData : NSObject <FPAFMultipartFormData> {
