@@ -885,7 +885,7 @@ NSInteger ROW_HEIGHT = 44;
             mimetype = [[mimetype componentsSeparatedByString:@";"] objectAtIndex:0];
         }
         
-        UIImage *fileImage;
+        UIImage *fileImage = nil;
         if ([FPLibrary mimetype:mimetype instanceOfMimetype:@"image/*"]){
             fileImage = [UIImage imageWithData:file];
         }
