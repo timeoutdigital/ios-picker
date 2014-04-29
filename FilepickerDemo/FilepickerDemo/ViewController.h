@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <FPPicker/FPPicker.h>
+#import <FilepickerSDK/FPPicker.h>
 
 @interface ViewController : UIViewController <FPPickerDelegate, UIPopoverControllerDelegate, FPSaveDelegate> {
     IBOutlet UIImageView *imageView;

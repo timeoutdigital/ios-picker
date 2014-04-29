@@ -328,8 +328,8 @@
     
     
     if ([mimetype isEqualToString:@"video/quicktime"]){
-        Byte *buffer = (Byte*)malloc(representation.size);
-        NSUInteger buffered = [representation getBytes:buffer fromOffset:0.0 length:representation.size error:nil];
+        Byte *buffer = (Byte*)malloc((unsigned long)representation.size);
+        NSUInteger buffered = [representation getBytes:buffer fromOffset:0.0 length:(unsigned long)representation.size error:nil];
         filedata = [NSData dataWithBytesNoCopy:buffer length:buffered freeWhenDone:YES];
         //filedata = [[NSData alloc] initWithContentsOfURL:[representation url]];
     } else if ([mimetype isEqualToString:@"image/png"]){
