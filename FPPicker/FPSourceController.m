@@ -34,7 +34,7 @@
 UIImage *selectOverlay;
 UIImage *selectIcon;
 NSInteger ROW_HEIGHT = 44;
-static const CGFloat UPLOAD_BUTTON_CONTAINER_HEIGHT = 45.f;
+//static const CGFloat UPLOAD_BUTTON_CONTAINER_HEIGHT = 45.f;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -758,7 +758,7 @@ static const CGFloat UPLOAD_BUTTON_CONTAINER_HEIGHT = 45.f;
                         hud.labelText = @"Finished uploading";
                         [self finishMultipleUpload:results];
                     } else {
-                        hud.labelText = [NSString stringWithFormat:@"Downloading %u of %ld files", results.count + 1, (long)totalCount];
+                        hud.labelText = [NSString stringWithFormat:@"Downloading %lu of %ld files", (unsigned long)(results.count + 1u), (long)totalCount];
                     }
                 }
                 @synchronized(progressTracker) {
