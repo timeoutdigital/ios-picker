@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = '6.0'
   s.ios.prefix_header_file = 'FPPicker/FPPicker-Prefix.pch'
-  s.source_files = 'FPPicker/*.{h,m}'
   s.resources = "FPPicker/Resources/*.{png,plist}"
   #s.preserve_paths = 'library/FPPicker.framework'
   s.frameworks   = 'AssetsLibrary', 'QuartzCore', 'CoreGraphics', 'MobileCoreServices', 'Foundation', 'CoreFoundation', 'FPPicker'
@@ -24,8 +23,9 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   s.subspec 'arc' do |sp|
+    s.source_files = 'FPPicker/*.{h,m}'
     sp.requires_arc = true
-    sp.dependency 'AFNetworking', '~> 2.2.1'
+    #sp.dependency 'AFNetworking', '~> 2.2.1'
   end
   s.subspec 'no-arc' do |sp|
     s.source_files = 'FPPicker/FPAFNetworking/*.{h,m}'
