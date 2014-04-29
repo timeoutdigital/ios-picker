@@ -23,12 +23,12 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
   s.subspec 'arc' do |sp|
-    s.source_files = 'FPPicker/*.{h,m}'
+    sp.source_files = 'FPPicker/*.{h,m}'
     sp.requires_arc = true
     #sp.dependency 'AFNetworking', '~> 2.2.1'
   end
   s.subspec 'no-arc' do |sp|
-    s.source_files = 'FPPicker/FPAFNetworking/*.{h,m}'
+    sp.source_files = 'FPPicker/FPAFNetworking/*.{h,m}'
     sp.requires_arc = false
     sp.dependency 'LFJSONKit', '~> 1.6a'
   end
