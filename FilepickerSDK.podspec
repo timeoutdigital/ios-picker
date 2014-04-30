@@ -16,13 +16,12 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = '6.0'
   s.ios.prefix_header_file = 'FPPicker/FPPicker-Prefix.pch'
-  s.ios.resource_bundle = { 'FPPicker' => "FPPicker/Resources/*.{png,plist}" }
   #s.preserve_paths = 'library/FPPicker.framework'
-  s.frameworks   = 'AssetsLibrary', 'QuartzCore', 'CoreGraphics', 'MobileCoreServices', 'Foundation', 'CoreFoundation', 'FPPicker'
   #s.xcconfig     = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/FilepickerSDK/library"' }
 
-  s.requires_arc = true
-  s.subspec 'arc' do |sp|
+  s.subspec 'core' do |sp|
+    sp.resource_bundle = { 'FilepickerSDK' => [ 'FPPicker/Resources/images/*.png', 'FPPicker/Resources/Contents/*.plist', 'FPPicker/Resources/Contents/*.lproj' ] }
+    sp.frameworks   = 'AssetsLibrary', 'QuartzCore', 'CoreGraphics', 'MobileCoreServices', 'Foundation', 'CoreFoundation', 'FPPicker'
     sp.source_files = 'FPPicker/*.{h,m}'
     sp.requires_arc = true
     #sp.dependency 'AFNetworking', '~> 2.2.1'
