@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = '6.0'
   s.ios.prefix_header_file = 'FPPicker/FPPicker-Prefix.pch'
-  s.resources = "FPPicker/Resources/*.{png,plist}"
+  s.ios.resource_bundle = { 'FPPicker' => "FPPicker/Resources/*.{png,plist}" }
   #s.preserve_paths = 'library/FPPicker.framework'
   s.frameworks   = 'AssetsLibrary', 'QuartzCore', 'CoreGraphics', 'MobileCoreServices', 'Foundation', 'CoreFoundation', 'FPPicker'
   #s.xcconfig     = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/FilepickerSDK/library"' }
