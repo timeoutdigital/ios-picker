@@ -493,7 +493,7 @@
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
         NSString* mainBundlePath = [[NSBundle mainBundle] resourcePath];
-        NSString* frameworkBundlePath = [mainBundlePath stringByAppendingPathComponent:@"FPPicker.bundle"];
+        NSString* frameworkBundlePath = [mainBundlePath stringByAppendingPathComponent:@"FilepickerSDK.bundle"];
         frameworkBundle = [NSBundle bundleWithPath:frameworkBundlePath];
     });
     return frameworkBundle;
