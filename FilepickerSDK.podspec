@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FilepickerSDK"
-  s.version      = "2.7.1"
+  s.version      = "v2.7.0"
   s.summary      = "FPPicker.framework is the Filepicker.io iOS famework."
   s.homepage     = "https://developers.filepicker.io/docs/ios/"
   s.screenshots  = "https://github.com/Filepicker/ios/raw/master/Documenation%20Files/filepicker_ios.png"
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.source       = {
     :git => 'https://github.com/escherba/ios-picker.git',
-    :tag => '2.7.1'
+    :tag => 'v2.7.0'
   }
 
   s.platform     = :ios
@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   s.subspec 'no-arc' do |sp|
     sp.source_files = 'FPPicker/FPAFNetworking/*.{h,m}'
     sp.requires_arc = false
-    sp.dependency 'LFJSONKit', '~> 1.6a'
   end
+  s.dependency 'LFJSONKit', '~> 1.6a'
 end
