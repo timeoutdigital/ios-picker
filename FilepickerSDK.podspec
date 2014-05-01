@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.source       = {
     :git => 'https://github.com/escherba/ios-picker.git',
-    :tag => 'v2.7.0'
+    :tag => '2.7.0'
   }
 
   s.platform     = :ios
