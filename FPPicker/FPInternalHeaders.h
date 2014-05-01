@@ -7,7 +7,7 @@
 //
 
 #import <LFJSONKit/JSONKit.h>
-#import "FPAFNetworking.h"
+#import "FPAFNetworking/FPAFNetworking.h"
 #import "FPMBProgressHUD.h"
 #import "FP_PullRefreshTableViewController.h"
 
