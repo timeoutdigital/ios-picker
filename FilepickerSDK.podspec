@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FilepickerSDK"
-  s.version      = "v2.7.0"
+  s.version      = "2.7.0"
   s.summary      = "FPPicker.framework is the Filepicker.io iOS famework."
   s.homepage     = "https://developers.filepicker.io/docs/ios/"
   s.screenshots  = "https://github.com/Filepicker/ios/raw/master/Documenation%20Files/filepicker_ios.png"
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.source       = {
     :git => 'https://github.com/escherba/ios-picker.git',
-    :tag => 'v2.7.0'
+    :tag => '2.7.0'
   }
 
   s.platform     = :ios
