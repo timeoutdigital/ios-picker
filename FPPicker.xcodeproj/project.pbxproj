@@ -205,6 +205,60 @@
 		EF2C85C3191062890050BE05 /* FPAFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPAFXMLRequestOperation.m; path = FPAFNetworking/FPAFXMLRequestOperation.m; sourceTree = "<group>"; };
 		EF2C85C4191062890050BE05 /* UIImageView+FPAFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+FPAFNetworking.h"; path = "FPAFNetworking/UIImageView+FPAFNetworking.h"; sourceTree = "<group>"; };
 		EF2C85C5191062890050BE05 /* UIImageView+FPAFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+FPAFNetworking.m"; path = "FPAFNetworking/UIImageView+FPAFNetworking.m"; sourceTree = "<group>"; };
+		EF2C86901911E64F0050BE05 /* allowedUrlPrefix.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = allowedUrlPrefix.plist; sourceTree = "<group>"; };
+		EF2C86911911E64F0050BE05 /* disallowedUrlPrefix.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = disallowedUrlPrefix.plist; sourceTree = "<group>"; };
+		EF2C86931911E64F0050BE05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EF2C86941911E64F0050BE05 /* FilepickerSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FilepickerSettings.plist; sourceTree = "<group>"; };
+		EF2C86961911E64F0050BE05 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		EF2C86971911E64F0050BE05 /* glyphicons_008_film.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_008_film.png; sourceTree = "<group>"; };
+		EF2C86981911E64F0050BE05 /* glyphicons_008_film@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_008_film@2x.png"; sourceTree = "<group>"; };
+		EF2C86991911E64F0050BE05 /* glyphicons_011_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_011_camera.png; sourceTree = "<group>"; };
+		EF2C869A1911E64F0050BE05 /* glyphicons_011_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_011_camera@2x.png"; sourceTree = "<group>"; };
+		EF2C869B1911E64F0050BE05 /* glyphicons_027_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_027_search.png; sourceTree = "<group>"; };
+		EF2C869C1911E64F0050BE05 /* glyphicons_027_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_027_search@2x.png"; sourceTree = "<group>"; };
+		EF2C869D1911E64F0050BE05 /* glyphicons_036_file.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_036_file.png; sourceTree = "<group>"; };
+		EF2C869E1911E64F0050BE05 /* glyphicons_036_file@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_036_file@2x.png"; sourceTree = "<group>"; };
+		EF2C869F1911E64F0050BE05 /* glyphicons_144_folder_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_144_folder_open.png; sourceTree = "<group>"; };
+		EF2C86A01911E64F0050BE05 /* glyphicons_144_folder_open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_144_folder_open@2x.png"; sourceTree = "<group>"; };
+		EF2C86A11911E64F0050BE05 /* glyphicons_154_show_big_thumbnails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_154_show_big_thumbnails.png; sourceTree = "<group>"; };
+		EF2C86A21911E64F0050BE05 /* glyphicons_154_show_big_thumbnails@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_154_show_big_thumbnails@2x.png"; sourceTree = "<group>"; };
+		EF2C86A31911E64F0050BE05 /* glyphicons_180_facetime_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_180_facetime_video.png; sourceTree = "<group>"; };
+		EF2C86A41911E64F0050BE05 /* glyphicons_180_facetime_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_180_facetime_video@2x.png"; sourceTree = "<group>"; };
+		EF2C86A51911E64F0050BE05 /* glyphicons_300_microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_300_microphone.png; sourceTree = "<group>"; };
+		EF2C86A61911E64F0050BE05 /* glyphicons_300_microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_300_microphone@2x.png"; sourceTree = "<group>"; };
+		EF2C86A71911E64F0050BE05 /* glyphicons_361_dropbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_361_dropbox.png; sourceTree = "<group>"; };
+		EF2C86A81911E64F0050BE05 /* glyphicons_361_dropbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_361_dropbox@2x.png"; sourceTree = "<group>"; };
+		EF2C86A91911E64F0050BE05 /* glyphicons_366_picasa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_366_picasa.png; sourceTree = "<group>"; };
+		EF2C86AA1911E64F0050BE05 /* glyphicons_366_picasa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_366_picasa@2x.png"; sourceTree = "<group>"; };
+		EF2C86AB1911E64F0050BE05 /* glyphicons_371_evernote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_371_evernote.png; sourceTree = "<group>"; };
+		EF2C86AC1911E64F0050BE05 /* glyphicons_371_evernote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_371_evernote@2x.png"; sourceTree = "<group>"; };
+		EF2C86AD1911E64F0050BE05 /* glyphicons_381_github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_381_github.png; sourceTree = "<group>"; };
+		EF2C86AE1911E64F0050BE05 /* glyphicons_381_github@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_381_github@2x.png"; sourceTree = "<group>"; };
+		EF2C86AF1911E64F0050BE05 /* glyphicons_390_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_390_facebook.png; sourceTree = "<group>"; };
+		EF2C86B01911E64F0050BE05 /* glyphicons_390_facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_390_facebook@2x.png"; sourceTree = "<group>"; };
+		EF2C86B11911E64F0050BE05 /* glyphicons_395_flickr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_395_flickr.png; sourceTree = "<group>"; };
+		EF2C86B21911E64F0050BE05 /* glyphicons_395_flickr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_395_flickr@2x.png"; sourceTree = "<group>"; };
+		EF2C86B31911E64F0050BE05 /* glyphicons_399_e-mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_399_e-mail.png"; sourceTree = "<group>"; };
+		EF2C86B41911E64F0050BE05 /* glyphicons_399_e-mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_399_e-mail@2x.png"; sourceTree = "<group>"; };
+		EF2C86B51911E64F0050BE05 /* glyphicons_sb1_gmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_sb1_gmail.png; sourceTree = "<group>"; };
+		EF2C86B61911E64F0050BE05 /* glyphicons_sb1_gmail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_sb1_gmail@2x.png"; sourceTree = "<group>"; };
+		EF2C86B71911E64F0050BE05 /* glyphicons_sb2_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_sb2_box.png; sourceTree = "<group>"; };
+		EF2C86B81911E64F0050BE05 /* glyphicons_sb2_box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_sb2_box@2x.png"; sourceTree = "<group>"; };
+		EF2C86B91911E64F0050BE05 /* glyphicons_sb3_skydrive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_sb3_skydrive.png; sourceTree = "<group>"; };
+		EF2C86BA1911E64F0050BE05 /* glyphicons_sb3_skydrive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glyphicons_sb3_skydrive@2x.png"; sourceTree = "<group>"; };
+		EF2C86BB1911E64F0050BE05 /* GoogleDrive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GoogleDrive.png; sourceTree = "<group>"; };
+		EF2C86BC1911E64F0050BE05 /* GoogleDrive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GoogleDrive@2x.png"; sourceTree = "<group>"; };
+		EF2C86BD1911E64F0050BE05 /* Instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Instagram.png; sourceTree = "<group>"; };
+		EF2C86BE1911E64F0050BE05 /* Instagram@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instagram@2x.png"; sourceTree = "<group>"; };
+		EF2C86BF1911E64F0050BE05 /* logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_small.png; sourceTree = "<group>"; };
+		EF2C86C01911E64F0050BE05 /* logo_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_small@2x.png"; sourceTree = "<group>"; };
+		EF2C86C11911E64F0050BE05 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		EF2C86C21911E64F0050BE05 /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
+		EF2C86C31911E64F0050BE05 /* select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select@2x.png"; sourceTree = "<group>"; };
+		EF2C86C41911E64F0050BE05 /* SelectOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectOverlay.png; sourceTree = "<group>"; };
+		EF2C86C51911E64F0050BE05 /* SelectOverlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SelectOverlay@2x.png"; sourceTree = "<group>"; };
+		EF2C86C61911E64F0050BE05 /* SelectOverlayiOS7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectOverlayiOS7.png; sourceTree = "<group>"; };
+		EF2C86C71911E64F0050BE05 /* SelectOverlayiOS7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SelectOverlayiOS7@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +278,7 @@
 		83A030D715A89C9D0085E186 = {
 			isa = PBXGroup;
 			children = (
+				EF2C868E1911E64F0050BE05 /* Resources */,
 				83A030E715A89C9D0085E186 /* FPPicker */,
 				83A030E415A89C9D0085E186 /* Frameworks */,
 				83A030E315A89C9D0085E186 /* Products */,
@@ -349,6 +404,84 @@
 				02C136A91856794000D6940E /* FPProgressTracker.m */,
 			);
 			name = FPClasses;
+			sourceTree = "<group>";
+		};
+		EF2C868E1911E64F0050BE05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF2C868F1911E64F0050BE05 /* Contents */,
+				EF2C86951911E64F0050BE05 /* images */,
+			);
+			name = Resources;
+			path = FPPicker/Resources;
+			sourceTree = "<group>";
+		};
+		EF2C868F1911E64F0050BE05 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				EF2C86901911E64F0050BE05 /* allowedUrlPrefix.plist */,
+				EF2C86911911E64F0050BE05 /* disallowedUrlPrefix.plist */,
+				EF2C86921911E64F0050BE05 /* InfoPlist.strings */,
+				EF2C86941911E64F0050BE05 /* FilepickerSettings.plist */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
+		EF2C86951911E64F0050BE05 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EF2C86961911E64F0050BE05 /* arrow.png */,
+				EF2C86971911E64F0050BE05 /* glyphicons_008_film.png */,
+				EF2C86981911E64F0050BE05 /* glyphicons_008_film@2x.png */,
+				EF2C86991911E64F0050BE05 /* glyphicons_011_camera.png */,
+				EF2C869A1911E64F0050BE05 /* glyphicons_011_camera@2x.png */,
+				EF2C869B1911E64F0050BE05 /* glyphicons_027_search.png */,
+				EF2C869C1911E64F0050BE05 /* glyphicons_027_search@2x.png */,
+				EF2C869D1911E64F0050BE05 /* glyphicons_036_file.png */,
+				EF2C869E1911E64F0050BE05 /* glyphicons_036_file@2x.png */,
+				EF2C869F1911E64F0050BE05 /* glyphicons_144_folder_open.png */,
+				EF2C86A01911E64F0050BE05 /* glyphicons_144_folder_open@2x.png */,
+				EF2C86A11911E64F0050BE05 /* glyphicons_154_show_big_thumbnails.png */,
+				EF2C86A21911E64F0050BE05 /* glyphicons_154_show_big_thumbnails@2x.png */,
+				EF2C86A31911E64F0050BE05 /* glyphicons_180_facetime_video.png */,
+				EF2C86A41911E64F0050BE05 /* glyphicons_180_facetime_video@2x.png */,
+				EF2C86A51911E64F0050BE05 /* glyphicons_300_microphone.png */,
+				EF2C86A61911E64F0050BE05 /* glyphicons_300_microphone@2x.png */,
+				EF2C86A71911E64F0050BE05 /* glyphicons_361_dropbox.png */,
+				EF2C86A81911E64F0050BE05 /* glyphicons_361_dropbox@2x.png */,
+				EF2C86A91911E64F0050BE05 /* glyphicons_366_picasa.png */,
+				EF2C86AA1911E64F0050BE05 /* glyphicons_366_picasa@2x.png */,
+				EF2C86AB1911E64F0050BE05 /* glyphicons_371_evernote.png */,
+				EF2C86AC1911E64F0050BE05 /* glyphicons_371_evernote@2x.png */,
+				EF2C86AD1911E64F0050BE05 /* glyphicons_381_github.png */,
+				EF2C86AE1911E64F0050BE05 /* glyphicons_381_github@2x.png */,
+				EF2C86AF1911E64F0050BE05 /* glyphicons_390_facebook.png */,
+				EF2C86B01911E64F0050BE05 /* glyphicons_390_facebook@2x.png */,
+				EF2C86B11911E64F0050BE05 /* glyphicons_395_flickr.png */,
+				EF2C86B21911E64F0050BE05 /* glyphicons_395_flickr@2x.png */,
+				EF2C86B31911E64F0050BE05 /* glyphicons_399_e-mail.png */,
+				EF2C86B41911E64F0050BE05 /* glyphicons_399_e-mail@2x.png */,
+				EF2C86B51911E64F0050BE05 /* glyphicons_sb1_gmail.png */,
+				EF2C86B61911E64F0050BE05 /* glyphicons_sb1_gmail@2x.png */,
+				EF2C86B71911E64F0050BE05 /* glyphicons_sb2_box.png */,
+				EF2C86B81911E64F0050BE05 /* glyphicons_sb2_box@2x.png */,
+				EF2C86B91911E64F0050BE05 /* glyphicons_sb3_skydrive.png */,
+				EF2C86BA1911E64F0050BE05 /* glyphicons_sb3_skydrive@2x.png */,
+				EF2C86BB1911E64F0050BE05 /* GoogleDrive.png */,
+				EF2C86BC1911E64F0050BE05 /* GoogleDrive@2x.png */,
+				EF2C86BD1911E64F0050BE05 /* Instagram.png */,
+				EF2C86BE1911E64F0050BE05 /* Instagram@2x.png */,
+				EF2C86BF1911E64F0050BE05 /* logo_small.png */,
+				EF2C86C01911E64F0050BE05 /* logo_small@2x.png */,
+				EF2C86C11911E64F0050BE05 /* placeholder.png */,
+				EF2C86C21911E64F0050BE05 /* select.png */,
+				EF2C86C31911E64F0050BE05 /* select@2x.png */,
+				EF2C86C41911E64F0050BE05 /* SelectOverlay.png */,
+				EF2C86C51911E64F0050BE05 /* SelectOverlay@2x.png */,
+				EF2C86C61911E64F0050BE05 /* SelectOverlayiOS7.png */,
+				EF2C86C71911E64F0050BE05 /* SelectOverlayiOS7@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,6 +719,17 @@
 			targetProxy = 83FEB834179B2428009097B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF2C86921911E64F0050BE05 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF2C86931911E64F0050BE05 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		023D832E1843CB1100D74A82 /* Debug */ = {

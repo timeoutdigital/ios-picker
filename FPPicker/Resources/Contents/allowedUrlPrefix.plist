@@ -11,13 +11,10 @@
 	<string>https://www.dropbox.com/verify_code</string>
 	<string>http://www.facebook.com/dialog/oauth</string>
 	<string>https://www.facebook.com/dialog/oauth</string>
-	<string>http://m.facebook.com/login.php</string>
-	<string>https://m.facebook.com/login.php</string>
-	<string>https://m.facebook.com/dialog/</string>
+	<string>http://m.facebook.com/</string>
+	<string>https://m.facebook.com/</string>
 	<string>http://www.facebook.com/dialog/permissions.request</string>
 	<string>https://www.facebook.com/dialog/permissions.request</string>
-	<string>https://m.facebook.com/checkpoint/</string>
-	<string>https://m.facebook.com/login/checkpoint/</string>
 	<string>https://www.google.com/accounts/OAuthAuthorizeToken</string>
 	<string>https://accounts.google.com/OAuthAuthorizeToken</string>
 	<string>https://www.google.com/accounts/CheckCookie</string>
