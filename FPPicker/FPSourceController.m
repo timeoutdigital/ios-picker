@@ -980,10 +980,11 @@ NSInteger ROW_HEIGHT = 44;
         
         NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
 
+#ifdef DEBUG
         for (NSHTTPCookie* cookie in [cookies cookies]) {
             NSLog(@"%@",[cookie domain]);
         }
-
+#endif
         
         for (NSString *urlString in sourceType.externalDomains){
             NSArray* siteCookies;        
@@ -993,10 +994,11 @@ NSInteger ROW_HEIGHT = 44;
             }
         }
         
+#ifdef DEBUG
         for (NSHTTPCookie* cookie in [cookies cookies]) {
             NSLog(@"- %@",[cookie domain]);
         }
-        
+#endif
         
         [FPMBProgressHUD hideAllHUDsForView:self.view animated:YES];
         
