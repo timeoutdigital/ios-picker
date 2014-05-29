@@ -151,7 +151,10 @@
             };
             
             __block void (^endPartFail) (NSURLRequest *, NSHTTPURLResponse *, NSError *, id);
-            endPartFail =  [^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-retain-cycles"
+            endPartFail = [^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                 if (numberOfTriesFinish >= fpNumRetries){
                     NSLog(@"failed at the end: %@ %@", error, JSON);
                     failure(error, JSON);
@@ -160,6 +163,7 @@
                     [[FPAFJSONRequestOperation JSONRequestOperationWithRequest:request success:endPartSuccess failure:endPartFail] start];
                 }
             } copy];
+            #pragma clang diagnostic pop
             
             [[FPAFJSONRequestOperation JSONRequestOperationWithRequest:request success:endPartSuccess failure:endPartFail] start];
         };
@@ -206,6 +210,9 @@
             
             __block int numberOfTries = 0;
             __block void (^onePartFail)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id);
+            
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-retain-cycles"
             onePartFail =  [^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                 if (numberOfTries > fpNumRetries){
                     NSLog(@"Fail: %@ %@", error, JSON);
@@ -216,6 +223,7 @@
                     [[FPAFJSONRequestOperation JSONRequestOperationWithRequest:request success:onePartSuccess failure:onePartFail] start];
                 }
             } copy];
+            #pragma clang diagnostic pop
             
             FPAFJSONRequestOperation *operation = [FPAFJSONRequestOperation JSONRequestOperationWithRequest:request success:onePartSuccess failure:onePartFail];
             [operation setUploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
@@ -230,6 +238,9 @@
     
     __block int numberOfTriesBegin = 0;
     __block void (^beginPartFail) (NSURLRequest *, NSHTTPURLResponse *, NSError *, id);
+    
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Warc-retain-cycles"
     beginPartFail =  [^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         if (numberOfTriesBegin > fpNumRetries){
             NSLog(@"Response error: %@ %@", error, JSON);
@@ -239,8 +250,7 @@
             [[FPAFJSONRequestOperation JSONRequestOperationWithRequest:request success:beginPartSuccess failure:beginPartFail] start];
         }
     } copy];
-
-    
+    #pragma clang diagnostic pop
     
     [[FPAFJSONRequestOperation JSONRequestOperationWithRequest:request success:beginPartSuccess failure:beginPartFail] start];
     
