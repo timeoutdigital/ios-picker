@@ -15,7 +15,10 @@
 
 //Ignore warning because this is an "abstract" class, and subclasses
 //should implement the table delegate/data source methods
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wprotocol"
 @implementation FPTableWithUploadButtonViewController
+#pragma clang diagnostic pop
 
 @synthesize tableView;
 @synthesize selectMultiple, maxFiles;
