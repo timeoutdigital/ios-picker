@@ -51,6 +51,8 @@ NSAssert([NSThread isMainThread], @"You aren't running in the UI thread!")
 
 #define fpAPIKEY                    [[NSPropertyListSerialization propertyListFromData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"]] mutabilityOption:0 format:NULL errorDescription:NULL] objectForKey:@"Filepicker API Key"]
 
+#define fpPARAMS                    [[NSPropertyListSerialization propertyListFromData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"]] mutabilityOption:0 format:NULL errorDescription:NULL] objectForKey:@"Filepicker Parameters"]
+
 #define fpWindowSize                CGSizeMake(320, 480)
 
 
