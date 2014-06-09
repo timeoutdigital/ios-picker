@@ -178,7 +178,7 @@
     // nb: The camera roll is handled like a normal source as it is in FPLocalController
     NSLog(@"Picked something from local camera: %@ %@", info, kUTTypeImage);
     
-    if ([[info objectForKey:@"UIImagePickerControllerMediaType"] isEqual:(NSString*) kUTTypeImage]){
+    if ([[info objectForKey:UIImagePickerControllerMediaType] isEqual:(NSString*) kUTTypeImage]){
         NSString *dataType;
         for (NSString *type in dataTypes){
             if ([type isEqualToString:@"image/png"] || [type isEqualToString:@"image/jpeg"]){
@@ -189,14 +189,7 @@
         [FPLibrary uploadImage:imageToSave ofMimetype:dataType withOptions:info shouldUpload:self.shouldUpload success:^(id JSON, NSURL *localurl) {
 
             NSLog(@"JSON: %@", JSON);
-            NSDictionary *output = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                    [info objectForKey:@"UIImagePickerControllerMediaType"], @"FPPickerControllerMediaType",
-                                    imageToSave, @"FPPickerControllerOriginalImage",
-                                    localurl, @"FPPickerControllerMediaURL",
-                                    [[[JSON objectForKey:@"data"]  objectAtIndex:0] objectForKey:@"url"], @"FPPickerControllerRemoteURL",
-                                    [[[[JSON objectForKey:@"data"] objectAtIndex:0] objectForKey:@"data"] objectForKey:@"key"], @"FPPickerControllerKey",
-
-                                    nil];
+            NSDictionary *output = FPDictionaryFromJSONInfoPhoto(JSON, imageToSave, localurl);
             dispatch_async(dispatch_get_main_queue(),^{
                 [FPMBProgressHUD hideHUDForView:picker.view animated:YES];
                 [picker dismissViewControllerAnimated:NO completion:^{
@@ -205,12 +198,7 @@
             });
             
         } failure:^(NSError *error, id JSON, NSURL *localurl) {
-            NSDictionary *output = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                    [info objectForKey:@"UIImagePickerControllerMediaType"], @"FPPickerControllerMediaType",
-                                    imageToSave, @"FPPickerControllerOriginalImage",
-                                    localurl, @"FPPickerControllerMediaURL",
-                                    @"", @"FPPickerControllerRemoteURL",
-                                    nil];
+            NSDictionary *output = FPDictionaryFromJSONInfoPhotoFailure(imageToSave, localurl, nil);
             dispatch_async(dispatch_get_main_queue(),^{
                 NSLog(@"dispatched main thread: %@", [NSThread isMainThread]?@"YES":@"NO");
 
@@ -223,16 +211,11 @@
         } progress:^(float progress) {
             hud.progress = progress;
         }];
-    } else if ([[info objectForKey:@"UIImagePickerControllerMediaType"] isEqual:(NSString*) kUTTypeMovie]){
-        NSURL *url = [info objectForKey:@"UIImagePickerControllerMediaURL"];
+    } else if ([[info objectForKey:UIImagePickerControllerMediaType] isEqual:(NSString*) kUTTypeMovie]){
+        NSURL *url = [info objectForKey:UIImagePickerControllerMediaURL];
         [FPLibrary uploadVideoURL: url withOptions:info shouldUpload:self.shouldUpload success:^(id JSON, NSURL *localurl) {
             NSLog(@"JSON: %@", JSON);
-            NSDictionary *output = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                    [info objectForKey:@"UIImagePickerControllerMediaType"], @"FPPickerControllerMediaType",
-                                    localurl, @"FPPickerControllerMediaURL",
-                                    [[[JSON objectForKey:@"data"]  objectAtIndex:0] objectForKey:@"url"], @"FPPickerControllerRemoteURL",
-                                    [[[[JSON objectForKey:@"data"] objectAtIndex:0] objectForKey:@"data"] objectForKey:@"key"], @"FPPickerControllerKey",
-                                    nil];
+            NSDictionary *output = FPDictionaryFromJSONInfoVideo(JSON, localurl);
             dispatch_async(dispatch_get_main_queue(),^{
                 [FPMBProgressHUD hideHUDForView:picker.view animated:YES];
                 [picker dismissViewControllerAnimated:NO completion:^{
@@ -243,11 +226,7 @@
             
         } failure:^(NSError *error, id JSON, NSURL *localurl) {
             NSLog(@"JSON: %@", JSON);
-            NSDictionary *output = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                    [info objectForKey:@"UIImagePickerControllerMediaType"], @"FPPickerControllerMediaType",
-                                    localurl, @"FPPickerControllerMediaURL",
-                                    @"", @"FPPickerControllerRemoteURL",
-                                    nil];
+            NSDictionary *output = FPDictionaryFromJSONInfoVideoFailure(localurl, nil);
             dispatch_async(dispatch_get_main_queue(),^{
                 [FPMBProgressHUD hideHUDForView:self.view animated:YES];
                 [picker dismissViewControllerAnimated:NO completion:^{
@@ -261,7 +240,7 @@
     } else {
         dispatch_async(dispatch_get_main_queue(),^{
             NSLog(@"Error. We couldn't handle this file %@", info);
-            NSLog(@"Type: %@", [info objectForKey:@"UIImagePickerControllerMediaType"]);
+            NSLog(@"Type: %@", [info objectForKey:UIImagePickerControllerMediaType]);
             [FPMBProgressHUD hideHUDForView:self.view animated:YES];
             [picker dismissViewControllerAnimated:NO completion:^{
                 [fpdelegate FPPickerControllerDidCancel:self];

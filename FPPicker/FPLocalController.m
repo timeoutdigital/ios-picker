@@ -407,12 +407,12 @@ UIImage *selectOverlay;
 
     NSLog(@"should upload: %@", shouldUpload?@"YES":@"NO");
     
-    if ([[asset valueForProperty:@"ALAssetPropertyType"] isEqual:(NSString*) ALAssetTypePhoto]){
+    if ([[asset valueForProperty:ALAssetPropertyType] isEqual:(NSString*) ALAssetTypePhoto]){
         [self uploadPhotoAsset:asset shouldUpload:shouldUpload success:success failure:failure progress:progress];
-    } else if ([[asset valueForProperty:@"ALAssetPropertyType"] isEqual:(NSString*) ALAssetTypeVideo]){
+    } else if ([[asset valueForProperty:ALAssetPropertyType] isEqual:(NSString*) ALAssetTypeVideo]){
         [self uploadVideoAsset:asset shouldUpload:shouldUpload success:success failure:failure progress:progress];
     } else {
-        NSLog(@"Type: %@", [asset valueForProperty:@"ALAssetPropertyType"]);
+        NSLog(@"Type: %@", [asset valueForProperty:ALAssetPropertyType]);
         NSLog(@"Didnt handle");
 
         failure([NSError errorWithDomain:@"iOS-picker" code:200 userInfo:@{NSLocalizedDescriptionKey: @"Invalid asset type", }], nil);
@@ -432,23 +432,10 @@ UIImage *selectOverlay;
     NSString *filename = [self getFilenameForAssetRepresentation:representation];
     
     [FPLibrary uploadAsset:asset withOptions:[[NSDictionary alloc] init] shouldUpload:shouldUpload success:^(id JSON, NSURL *localurl) {
-        NSDictionary *output = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                (NSString*) kUTTypeImage, @"FPPickerControllerMediaType",
-                                image, @"FPPickerControllerOriginalImage",
-                                localurl, @"FPPickerControllerMediaURL",
-                                [[[JSON objectForKey:@"data"]  objectAtIndex:0] objectForKey:@"url"], @"FPPickerControllerRemoteURL",
-                                [[[[JSON objectForKey:@"data"] objectAtIndex:0] objectForKey:@"data"] objectForKey:@"filename"], @"FPPickerControllerFilename",
-                                [[[[JSON objectForKey:@"data"] objectAtIndex:0] objectForKey:@"data"] objectForKey:@"key"], @"FPPickerControllerKey",
-                                nil];
+        NSDictionary *output = FPDictionaryFromJSONInfoPhoto(JSON, image, localurl);
         success(output);
     } failure:^(NSError *error, id JSON, NSURL *localurl) {
-        NSDictionary *output = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                (NSString*) kUTTypeImage, @"FPPickerControllerMediaType",
-                                image, @"FPPickerControllerOriginalImage",
-                                localurl, @"FPPickerControllerMediaURL",
-                                @"", @"FPPickerControllerRemoteURL",
-                                filename, @"FPPickerControllerFilename",
-                                nil];
+        NSDictionary *output = FPDictionaryFromJSONInfoPhotoFailure(image, localurl, filename);
         failure(error, output);
     } progress:progress];
 }
@@ -461,21 +448,10 @@ UIImage *selectOverlay;
     NSString *filename = [self getFilenameForAssetRepresentation:representation];
     
     [FPLibrary uploadAsset:asset withOptions:[[NSDictionary alloc] init] shouldUpload:shouldUpload success:^(id JSON, NSURL *localurl) {
-        NSDictionary *output = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                (NSString *) kUTTypeVideo , @"FPPickerControllerMediaType",
-                                localurl, @"FPPickerControllerMediaURL",
-                                [[[JSON objectForKey:@"data"]  objectAtIndex:0] objectForKey:@"url"], @"FPPickerControllerRemoteURL",
-                                [[[[JSON objectForKey:@"data"] objectAtIndex:0] objectForKey:@"data"] objectForKey:@"filename"], @"FPPickerControllerFilename",
-                                [[[[JSON objectForKey:@"data"] objectAtIndex:0] objectForKey:@"data"] objectForKey:@"key"], @"FPPickerControllerKey",
-                                nil];
+        NSDictionary *output =  FPDictionaryFromJSONInfoVideo(JSON, localurl);
         success(output);
     } failure:^(NSError *error, id JSON, NSURL *localurl) {
-        NSDictionary *output = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                (NSString *) kUTTypeVideo , @"FPPickerControllerMediaType",
-                                localurl, @"FPPickerControllerMediaURL",
-                                @"", @"FPPickerControllerRemoteURL",
-                                filename, @"FPPickerControllerFilename",
-                                nil];
+        NSDictionary *output = FPDictionaryFromJSONInfoVideoFailure(localurl, filename);
         failure(error, output);
     } progress:progress];
 }

@@ -8,9 +8,54 @@
 
 #import <LFJSONKit/JSONKit.h>
 #import "FPLibrary.h"
+#import "FPConstants.h"
 #import "FPInternalHeaders.h"
 #import "FPProgressTracker.h"
 
+
+NSDictionary* FPDictionaryFromJSONInfoPhoto(id JSON, UIImage* image, NSURL *localurl) {
+    id dataFirst = [[JSON objectForKey:@"data"] objectAtIndex:0];
+    id dataFirstData = [dataFirst objectForKey:@"data"];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:
+            (NSString*) kUTTypeImage, FPPickerControllerMediaType,
+            image, FPPickerControllerOriginalImage,
+            localurl, FPPickerControllerMediaURL,
+            [dataFirst objectForKey:@"url"], FPPickerControllerRemoteURL,
+            [dataFirstData objectForKey:@"filename"], FPPickerControllerFilename,
+            [dataFirstData objectForKey:@"key"], FPPickerControllerKey,
+            nil];
+}
+
+NSDictionary* FPDictionaryFromJSONInfoPhotoFailure(UIImage* image, NSURL *localurl, NSString* filename) {
+    return [[NSDictionary alloc] initWithObjectsAndKeys:
+            (NSString*) kUTTypeImage, FPPickerControllerMediaType,
+            image, FPPickerControllerOriginalImage,
+            localurl, FPPickerControllerMediaURL,
+            @"", FPPickerControllerRemoteURL,
+            filename, FPPickerControllerFilename,
+            nil];
+}
+
+NSDictionary* FPDictionaryFromJSONInfoVideo(id JSON, NSURL *localurl) {
+    id dataFirst = [[JSON objectForKey:@"data"] objectAtIndex:0];
+    id dataFirstData = [dataFirst objectForKey:@"data"];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:
+            (NSString *) kUTTypeVideo, FPPickerControllerMediaType,
+            localurl, FPPickerControllerMediaURL,
+            [dataFirst objectForKey:@"url"], FPPickerControllerRemoteURL,
+            [dataFirstData objectForKey:@"filename"], FPPickerControllerFilename,
+            [dataFirstData objectForKey:@"key"], FPPickerControllerKey,
+            nil];
+}
+
+NSDictionary* FPDictionaryFromJSONInfoVideoFailure(NSURL *localurl, NSString* filename) {
+    return [[NSDictionary alloc] initWithObjectsAndKeys:
+            (NSString *) kUTTypeVideo , FPPickerControllerMediaType,
+            localurl, FPPickerControllerMediaURL,
+            @"", FPPickerControllerRemoteURL,
+            filename, FPPickerControllerFilename,
+            nil];
+}
 
 static NSString* buildSessionString()
 {
