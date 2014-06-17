@@ -11,6 +11,11 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
+NSDictionary* FPDictionaryFromJSONInfoPhoto(id JSON, UIImage* image, NSURL *localurl);
+NSDictionary* FPDictionaryFromJSONInfoPhotoFailure(UIImage* image, NSURL *localurl, NSString* filename);
+NSDictionary* FPDictionaryFromJSONInfoVideo(id JSON, NSURL *localurl);
+NSDictionary* FPDictionaryFromJSONInfoVideoFailure(NSURL *localurl, NSString* filename);
+
 @interface FPLibrary : NSObject
 
 //For the camera

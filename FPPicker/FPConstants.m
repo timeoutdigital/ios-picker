@@ -23,3 +23,10 @@ NSString *const FPSourceFlickr = @"flickr";
 NSString *const FPSourcePicasa = @"picasa";
 NSString *const FPSourceSkydrive = @"skydrive";
 NSString *const FPSourceEvernote = @"evernote";
+
+const NSString* const FPPickerControllerMediaType = @"FPPickerControllerMediaType";
+const NSString* const FPPickerControllerOriginalImage = @"FPPickerControllerOriginalImage";
+const NSString* const FPPickerControllerMediaURL = @"FPPickerControllerMediaURL";
+const NSString* const FPPickerControllerRemoteURL = @"FPPickerControllerRemoteURL";
+const NSString* const FPPickerControllerFilename = @"FPPickerControllerFilename";
+const NSString* const FPPickerControllerKey = @"FPPickerControllerKey";

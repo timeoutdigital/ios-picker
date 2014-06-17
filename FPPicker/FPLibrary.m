@@ -6,9 +6,64 @@
 //  Copyright (c) 2012 Filepicker.io (Cloudtop Inc), All rights reserved.
 //
 
+#import <LFJSONKit/JSONKit.h>
 #import "FPLibrary.h"
+#import "FPConstants.h"
 #import "FPInternalHeaders.h"
 #import "FPProgressTracker.h"
+
+
+NSDictionary* FPDictionaryFromJSONInfoPhoto(id JSON, UIImage* image, NSURL *localurl) {
+    id dataFirst = [[JSON objectForKey:@"data"] objectAtIndex:0];
+    id dataFirstData = [dataFirst objectForKey:@"data"];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:
+            (NSString*) kUTTypeImage, FPPickerControllerMediaType,
+            image, FPPickerControllerOriginalImage,
+            localurl, FPPickerControllerMediaURL,
+            [dataFirst objectForKey:@"url"], FPPickerControllerRemoteURL,
+            [dataFirstData objectForKey:@"filename"], FPPickerControllerFilename,
+            [dataFirstData objectForKey:@"key"], FPPickerControllerKey,
+            nil];
+}
+
+NSDictionary* FPDictionaryFromJSONInfoPhotoFailure(UIImage* image, NSURL *localurl, NSString* filename) {
+    return [[NSDictionary alloc] initWithObjectsAndKeys:
+            (NSString*) kUTTypeImage, FPPickerControllerMediaType,
+            image, FPPickerControllerOriginalImage,
+            localurl, FPPickerControllerMediaURL,
+            @"", FPPickerControllerRemoteURL,
+            filename, FPPickerControllerFilename,
+            nil];
+}
+
+NSDictionary* FPDictionaryFromJSONInfoVideo(id JSON, NSURL *localurl) {
+    id dataFirst = [[JSON objectForKey:@"data"] objectAtIndex:0];
+    id dataFirstData = [dataFirst objectForKey:@"data"];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:
+            (NSString *) kUTTypeVideo, FPPickerControllerMediaType,
+            localurl, FPPickerControllerMediaURL,
+            [dataFirst objectForKey:@"url"], FPPickerControllerRemoteURL,
+            [dataFirstData objectForKey:@"filename"], FPPickerControllerFilename,
+            [dataFirstData objectForKey:@"key"], FPPickerControllerKey,
+            nil];
+}
+
+NSDictionary* FPDictionaryFromJSONInfoVideoFailure(NSURL *localurl, NSString* filename) {
+    return [[NSDictionary alloc] initWithObjectsAndKeys:
+            (NSString *) kUTTypeVideo , FPPickerControllerMediaType,
+            localurl, FPPickerControllerMediaURL,
+            @"", FPPickerControllerRemoteURL,
+            filename, FPPickerControllerFilename,
+            nil];
+}
+
+static NSString* buildSessionString()
+{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:fpPARAMS];
+    [parameters setObject:fpAPIKEY forKey:@"apikey"];
+    return [[NSDictionary dictionaryWithObject:parameters forKey:@"app"] JSONString];
+}
+
 
 @implementation FPLibrary
 
@@ -44,7 +99,6 @@
     
 }
 
-
 //single file upload
 + (void) singlepartUploadData:(NSData*) filedata
                        named:(NSString*) filename
@@ -56,8 +110,7 @@
     NSURL *url = [NSURL URLWithString: fpBASE_URL];
     FPAFHTTPClient *httpClient = [[FPAFHTTPClient alloc] initWithBaseURL:url];
     
-    NSString *appString = [NSString stringWithFormat:@"{\"apikey\": \"%@\"}", fpAPIKEY];
-    NSString *js_sessionString = [NSString stringWithFormat:@"{\"app\": %@}", appString];
+    NSString *js_sessionString = buildSessionString();
     
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             js_sessionString, @"js_session",
@@ -88,7 +141,6 @@
     
 }
 
-
 //multipart
 + (void) multipartUploadData:(NSData*) filedata
                        named:(NSString*) filename
@@ -97,25 +149,16 @@
                      failure:(void (^)(NSError *error, id JSON)) failure
                      progress:(void (^)(float progress))progress
 {
-    
-
-    
-
     NSInteger filesize = [filedata length];
     NSInteger numOfChunks = ceil(1.0*filesize/fpMaxChunkSize);
-    
     NSLog(@"Filesize: %ld chuncks: %ld", (long)filesize, (long)numOfChunks);
-    
     
     NSURL *url = [NSURL URLWithString: fpBASE_URL];
     FPAFHTTPClient *httpClient = [[FPAFHTTPClient alloc] initWithBaseURL:url];
     
-    NSString *appString = [NSString stringWithFormat:@"{\"apikey\": \"%@\"}", fpAPIKEY];
-    NSString *js_sessionString = [NSString stringWithFormat:@"{\"app\": %@}", appString];
+    NSString *js_sessionString = buildSessionString();
     
     /* begin multipart */
-
-    
     if (filename == nil){
         filename = @"filename";
     }
