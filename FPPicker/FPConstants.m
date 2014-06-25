@@ -24,9 +24,12 @@ NSString *const FPSourcePicasa = @"picasa";
 NSString *const FPSourceSkydrive = @"skydrive";
 NSString *const FPSourceEvernote = @"evernote";
 
-const NSString* const FPPickerControllerMediaType = @"FPPickerControllerMediaType";
-const NSString* const FPPickerControllerOriginalImage = @"FPPickerControllerOriginalImage";
-const NSString* const FPPickerControllerMediaURL = @"FPPickerControllerMediaURL";
-const NSString* const FPPickerControllerRemoteURL = @"FPPickerControllerRemoteURL";
-const NSString* const FPPickerControllerFilename = @"FPPickerControllerFilename";
-const NSString* const FPPickerControllerKey = @"FPPickerControllerKey";
+NSString *const FPPickerDomain = @"FPPicker";
+
+NSString* const FPPickerControllerMediaType = @"FPPickerControllerMediaType";
+NSString* const FPPickerControllerOriginalImage = @"FPPickerControllerOriginalImage";
+NSString* const FPPickerControllerMediaURL = @"FPPickerControllerMediaURL";
+NSString* const FPPickerControllerRemoteURL = @"FPPickerControllerRemoteURL";
+NSString* const FPPickerControllerFilename = @"FPPickerControllerFilename";
+NSString* const FPPickerControllerKey = @"FPPickerControllerKey";
+NSString* const FPPickerControllerThumbnailImage = @"FPPickerControllerThumbnailImage";

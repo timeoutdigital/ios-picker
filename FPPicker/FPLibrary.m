@@ -125,7 +125,7 @@ static NSString* buildSessionString()
         if ([@"ok" isEqual:[JSON valueForKey:@"result"]]){
             success(JSON);
         } else {
-            failure([[NSError alloc] initWithDomain:@"FPPicker" code:0 userInfo:nil], JSON);
+            failure([[NSError alloc] initWithDomain:FPPickerDomain code:0 userInfo:nil], JSON);
         }
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         failure(error, JSON);

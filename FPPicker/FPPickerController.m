@@ -161,9 +161,7 @@
     
     if ([fpdelegate respondsToSelector:@selector(FPPickerController:didPickMediaWithInfo:)]) {
         dispatch_async(dispatch_get_main_queue(),^{
-            [fpdelegate FPPickerController:self didPickMediaWithInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                              thumbImage, @"FPPickerControllerThumbnailImage"
-                                                              , nil]];
+            [fpdelegate FPPickerController:self didPickMediaWithInfo:[NSDictionary dictionaryWithObjectsAndKeys:thumbImage, FPPickerControllerThumbnailImage, nil]];
         });
     }
     

@@ -392,8 +392,8 @@ UIImage *selectOverlay;
             progress:(void (^)(float progress))progress
 {
     dispatch_async(dispatch_get_main_queue(),^{
-        [fpdelegate FPSourceController:nil didPickMediaWithInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                             [UIImage imageWithCGImage:[asset thumbnail]], @"FPPickerControllerThumbnailImage" , nil]];
+        [fpdelegate FPSourceController:nil didPickMediaWithInfo:
+         [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageWithCGImage:[asset thumbnail]], FPPickerControllerThumbnailImage, nil]];
     });
     
     NSLog(@"Asset: %@", asset);

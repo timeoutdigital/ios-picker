@@ -24,9 +24,12 @@ FOUNDATION_EXPORT NSString * const FPSourcePicasa;
 FOUNDATION_EXPORT NSString * const FPSourceSkydrive;
 FOUNDATION_EXPORT NSString * const FPSourceEvernote;
 
-FOUNDATION_EXPORT const NSString* const FPPickerControllerMediaType;
-FOUNDATION_EXPORT const NSString* const FPPickerControllerOriginalImage;
-FOUNDATION_EXPORT const NSString* const FPPickerControllerMediaURL;
-FOUNDATION_EXPORT const NSString* const FPPickerControllerRemoteURL;
-FOUNDATION_EXPORT const NSString* const FPPickerControllerFilename;
-FOUNDATION_EXPORT const NSString* const FPPickerControllerKey;
+FOUNDATION_EXPORT NSString * const FPPickerDomain;
+
+FOUNDATION_EXPORT NSString* const FPPickerControllerMediaType;
+FOUNDATION_EXPORT NSString* const FPPickerControllerOriginalImage;
+FOUNDATION_EXPORT NSString* const FPPickerControllerMediaURL;
+FOUNDATION_EXPORT NSString* const FPPickerControllerRemoteURL;
+FOUNDATION_EXPORT NSString* const FPPickerControllerFilename;
+FOUNDATION_EXPORT NSString* const FPPickerControllerKey;
+FOUNDATION_EXPORT NSString* const FPPickerControllerThumbnailImage;
