@@ -803,7 +803,7 @@ NSInteger ROW_HEIGHT = 44;
             progress:(void (^)(float progress))progress {
     dispatch_async(dispatch_get_main_queue(),^{
         [fpdelegate FPSourceController:self didPickMediaWithInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                              thumbnail, @"FPPickerControllerThumbnailImage"
+                                                              thumbnail, FPPickerControllerThumbnailImage
                                                               , nil]];
     });
     
@@ -841,9 +841,9 @@ NSInteger ROW_HEIGHT = 44;
         
         //NSLog(@"Headers: %@", headers);
         NSDictionary *info = [[NSDictionary alloc] initWithObjectsAndKeys:
-                              [JSON valueForKey:@"url"], @"FPPickerControllerRemoteURL",
-                               [JSON valueForKey:@"filename"], @"FPPickerControllerFilename",
-                              [JSON valueForKey:@"key"], @"FPPickerControllerKey",
+                              [JSON valueForKey:@"url"], FPPickerControllerRemoteURL,
+                               [JSON valueForKey:@"filename"], FPPickerControllerFilename,
+                              [JSON valueForKey:@"key"], FPPickerControllerKey,
                               nil];
         success(info);
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
@@ -893,15 +893,15 @@ NSInteger ROW_HEIGHT = 44;
         NSString * UTI = [self utiForMimetype:mimetype];
 
         NSMutableDictionary *info = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                                     [headers valueForKey:@"X-Data-Url"], @"FPPickerControllerRemoteURL",
-                                     [headers valueForKey:@"X-File-Name"], @"FPPickerControllerFilename",
-                                     tempURL, @"FPPickerControllerMediaURL",
-                                     UTI, @"FPPickerControllerMediaType",
-                                     fileImage, @"FPPickerControllerOriginalImage", //should be last as it might be nil
+                                     [headers valueForKey:@"X-Data-Url"], FPPickerControllerRemoteURL,
+                                     [headers valueForKey:@"X-File-Name"], FPPickerControllerFilename,
+                                     tempURL, FPPickerControllerMediaURL,
+                                     UTI, FPPickerControllerMediaType,
+                                     fileImage, FPPickerControllerOriginalImage, //should be last as it might be nil
                                      nil];
         
         if ([headers valueForKey:@"X-Data-Key"] != nil){
-            [info setValue:[headers valueForKey:@"X-Data-Key"] forKey:@"FPPickerControllerKey"];
+            [info setValue:[headers valueForKey:@"X-Data-Key"] forKey:FPPickerControllerKey];
         }
         
         success(info);
