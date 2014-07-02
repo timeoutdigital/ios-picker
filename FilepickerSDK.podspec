@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "2.7.3"
   s.summary      = "FPPicker.framework is the Filepicker.io iOS famework."
   s.homepage     = "https://developers.filepicker.io/docs/ios/"
-  s.screenshots  = "https://github.com/Filepicker/ios/raw/master/Documenation%20Files/filepicker_ios.png"
+  s.screenshots  = "https://raw.githubusercontent.com/Ink/ios-picker/master/Docs/filepicker_ios.png"
   s.license      = { :type => 'MIT', :file => 'license.txt' }
 
   s.author       = { "Liyan Chang" => "liyan@filepicker.io" }
