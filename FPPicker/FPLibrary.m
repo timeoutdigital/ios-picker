@@ -332,6 +332,7 @@ static NSString* buildSessionString()
     } else {
         filedata = UIImageJPEGRepresentation(image, 0.6);
         filename = @"camera.jpg";
+        mimetype = @"image/jpeg";
     }
     
     NSString *tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[FPLibrary genRandStringLength:20]];
@@ -404,6 +405,7 @@ static NSString* buildSessionString()
                                              scale:[representation scale] orientation:(UIImageOrientation)[representation orientation]];
         
         filedata = UIImageJPEGRepresentation(image, 0.6);
+        mimetype = @"image/jpeg";
     }
 
     if ([representation respondsToSelector:@selector(filename)]){
