@@ -131,11 +131,13 @@ static NSString* buildSessionString()
         failure(error, JSON);
     }];
     
-    [operation setUploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
-        if (totalBytesExpectedToWrite > 0) {
-            progress(((float)totalBytesWritten)/totalBytesExpectedToWrite);
-        }
-    }];
+    if (progress) {
+        [operation setUploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+            if (totalBytesExpectedToWrite > 0) {
+                progress(((float)totalBytesWritten)/totalBytesExpectedToWrite);
+            }
+        }];
+    }
     
     [operation start];
     
@@ -242,8 +244,10 @@ static NSString* buildSessionString()
             void (^onePartSuccess)(NSURLRequest*, NSHTTPURLResponse*, id) =  ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                 numberSent += 1;
                 
-                float overallProgress = [progressTracker setProgress:1.f forKey:[NSNumber numberWithInt:i]];
-                progress(overallProgress);
+                if (progress) {
+                    float overallProgress = [progressTracker setProgress:1.f forKey:[NSNumber numberWithInt:i]];
+                    progress(overallProgress);
+                }
                 
                 NSLog(@"Send %d: %@ (sent: %d)", i, JSON, numberSent);
                 if (numberSent == numOfChunks ){
@@ -269,12 +273,14 @@ static NSString* buildSessionString()
             #pragma clang diagnostic pop
             
             FPAFJSONRequestOperation *operation = [FPAFJSONRequestOperation JSONRequestOperationWithRequest:request success:onePartSuccess failure:onePartFail];
-            [operation setUploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
-                if (totalBytesExpectedToWrite > 0) {
-                    float overallProgress = [progressTracker setProgress:((float)totalBytesWritten)/totalBytesExpectedToWrite forKey:[NSNumber numberWithInt:i]];
-                    progress(overallProgress);
-                }
-            }];
+            if (progress) {
+                [operation setUploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+                    if (totalBytesExpectedToWrite > 0) {
+                        float overallProgress = [progressTracker setProgress:((float)totalBytesWritten)/totalBytesExpectedToWrite forKey:[NSNumber numberWithInt:i]];
+                        progress(overallProgress);
+                    }
+                }];
+            }
             [operation start];
         };
     };
