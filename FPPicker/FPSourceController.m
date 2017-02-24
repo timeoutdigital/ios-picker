@@ -31,7 +31,7 @@
 @synthesize selectedObjects = _selectedObjects;
 @synthesize selectedObjectThumbnails = _selectedObjectThumbnails;
 
-UIImage *selectOverlay;
+static UIImage *selectOverlay;
 UIImage *selectIcon;
 NSInteger ROW_HEIGHT = 44;
 //static const CGFloat UPLOAD_BUTTON_CONTAINER_HEIGHT = 45.f;
